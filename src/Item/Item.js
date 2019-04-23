@@ -1,7 +1,7 @@
 import React from "react";
 
-const Item = () => (
-    <div>Important thing</div>
+const Item = ({todoItem}) => (
+    <div>{todoItem}</div>
 );
 
 export default Item;

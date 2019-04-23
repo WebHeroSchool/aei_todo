@@ -1,15 +1,15 @@
 import React from "react";
 import Item from "../Item/Item"
 
-const ItemList = () => (
+const ItemList = ({todoItem}) => (
     <div style={{
         color: "tomato",
-        fontSize: ".5em"
+        fontSize: ".6em"
     }}>
         <ul>
-            <li><Item /></li>
-            <li><Item /></li>
-            <li><Item /></li>
+            <li><Item todoItem={todoItem[0]}/></li>
+            <li><Item todoItem={todoItem[1]}/></li>
+            <li><Item todoItem={todoItem[2]}/></li>
         </ul>
     </div>);
 
