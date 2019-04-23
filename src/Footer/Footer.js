@@ -1,7 +1,7 @@
 import React from "react";
 
-const Footer = () => (
-    <div style={{fontSize:"1em"}}> Footer</div>
+const Footer = ( { taskCount }) => (
+    <div style={{fontSize:".7em"}}> Осталось выполнить: {taskCount} дел</div>
 );
 
 export default Footer
