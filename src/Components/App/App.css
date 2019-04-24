@@ -1,0 +1,10 @@
+.wrap {
+    margin: auto;
+    width: 50vh;
+    font-family: Gabriola, serif;
+}
+
+.wrap__title {
+    color: red;
+    font-size: 2em
+}
