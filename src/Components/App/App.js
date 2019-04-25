@@ -9,13 +9,16 @@ const taskCount = 5;
 const App = () => {
 const items = [
     {
-        value: 'Выучить JS'
+        value: 'Выучить JS',
+        isDone: true
     },
     {
-        value: 'Сделать уборку'
+        value: 'Сделать уборку',
+        isDone: false
     },
     {
-        value: 'Сделать уборку в репозитории'
+        value: 'Сделать уборку в репозитории',
+        isDone: true
     }];
 return (
     <div className={styles.wrap}>
