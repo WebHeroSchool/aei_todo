@@ -1,10 +1,22 @@
 .wrap {
-    margin: auto;
-    width: 50vh;
-    font-family: Gabriola, serif;
+    background-color: #F6F6F8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 60vh;
+    min-height: 300px;
+    background-color: #E3E3E3;
 }
 
 .title {
-    color: red;
-    font-size: 2em
+    font-family: Roboto, serif;
+    margin: 0;
+    color: #C60021;
+    font-size: 2em;
+    font-weight: bolder;
+    padding: 0 0 0 20px;
 }
