@@ -1,7 +1,5 @@
 import React from "react";
 import Item from "../Item/Item"
-
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -10,7 +8,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import styles from './ItemList.module.css'
-
 
 const ItemList = ({items}) => (
     <div>
