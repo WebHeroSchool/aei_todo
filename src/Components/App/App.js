@@ -21,6 +21,8 @@ class App extends React.Component {
                 }]
         };
 
+    onClickDone = (isDone) => console.log(isDone);
+
 
     render() {
         document.body.style.margin = '0';
@@ -30,7 +32,7 @@ class App extends React.Component {
                 <div className={styles.main}>
                     <h1 className={styles.title}>Список дел:</h1>
                     <InputItem />
-                    <ItemList items={this.state.items} />
+                    <ItemList items={this.state.items} onClickDone={this.onClickDone} />
                     <Footer taskCount={6} />
                 </div>
             </div>);
