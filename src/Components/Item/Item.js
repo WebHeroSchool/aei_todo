@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
 
-const Item = ({value, isDone, onClickDone, id}) => (
+const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
     <ListItem className={
         classnames({
             [styles.item]: true
@@ -25,7 +25,7 @@ const Item = ({value, isDone, onClickDone, id}) => (
         }> {value}</div>
         <ListItemSecondaryAction className={styles.delete}>
             <IconButton aria-label="Comments">
-                <DeleteForeverRoundedIcon />
+                <DeleteForeverRoundedIcon onClick={() => onClickDelete(id)} />
             </IconButton>
         </ListItemSecondaryAction>
     </ListItem>
