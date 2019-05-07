@@ -21,8 +21,12 @@ class App extends React.Component {
                     value: 'Сделать уборку в репозитории',
                     isDone: true,
                     id: 3
-                }]
+                }],
+        count: 3
         };
+
+
+
 
     onClickDone = id => {
         const newItemList = this.state.items.map(item => {
@@ -36,16 +40,23 @@ class App extends React.Component {
     };
 
 
-    onClickDelete = id => {
-        const newItemList = this.state.items.filter(item => {
-            const newItem = {...item};
-            if (item.id !== id) {
-                return newItem;
-            }
+    onClickDelete = id => this.setState(state => ({
+        items: state.items.filter(item =>
+            item.id !== id),
+        count: state.count - 1
+    }));
 
-        });
-        this.setState({ items: newItemList});
-    }
+    onClickAdd = (value) => this.setState(state => ({
+        items:[
+            ...state.items,
+            {
+                value,
+                isDone: false,
+                id: state.count + 1
+            }],
+
+        count: state.count + 1
+        }));
 
 
     render() {
@@ -55,9 +66,9 @@ class App extends React.Component {
             <div className={styles.wrap}>
                 <div className={styles.main}>
                     <h1 className={styles.title}>Список дел:</h1>
-                    <InputItem />
+                    <InputItem onClickAdd={this.onClickAdd}/>
                     <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={ this.onClickDelete }/>
-                    <Footer taskCount={6} />
+                    <Footer taskCount={this.state.count} />
                 </div>
             </div>);
     }

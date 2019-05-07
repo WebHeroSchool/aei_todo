@@ -20,12 +20,12 @@ const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
         />
         <div className={
             classnames({
-                [styles.done]: isDone
+               [styles.done]: isDone
             })
         }> {value}</div>
         <ListItemSecondaryAction className={styles.delete}>
-            <IconButton aria-label="Comments">
-                <DeleteForeverRoundedIcon onClick={() => onClickDelete(id)} />
+            <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
+                <DeleteForeverRoundedIcon/>
             </IconButton>
         </ListItemSecondaryAction>
     </ListItem>
