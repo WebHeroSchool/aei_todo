@@ -8,29 +8,46 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import PropTypes from 'prop-types'
 
+class Item extends React.Component {
+    componentDidMount () {
+        console.log(`${(new Date()).toUTCString()} выполняю Монтирование компонента "${this.props.value}"` );
+    }
 
-const Item = ({value, isDone, onClickDone, id, onClickDelete}) => (
-    <ListItem className={
-        classnames({
-            [styles.item]: true
-        })
-    } >
-        <Checkbox
-            onClick={() => onClickDone(id)}
-            checked={isDone}
-        />
-        <div className={
-            classnames({
-               [styles.done]: isDone
-            })
-        }> {value}</div>
-        <ListItemSecondaryAction className={styles.delete}>
-            <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
-                <DeleteForeverRoundedIcon/>
-            </IconButton>
-        </ListItemSecondaryAction>
-    </ListItem>
-);
+    componentDidUpdate () {
+        console.log(`${(new Date()).toUTCString()} выполняю Обновление`)
+    }
+
+    componentWillUnmount() {
+        console.log(`${(new Date()).toUTCString()} выполняю Удаление`)
+    }
+
+    render () {
+        const {value, isDone, onClickDone, id, onClickDelete} = this.props;
+
+        return (
+            <ListItem className={
+                classnames({
+                    [styles.item]: true
+                })
+            } >
+                <Checkbox
+                    onClick={() => onClickDone(id)}
+                    checked={isDone}
+                />
+                <div className={
+                    classnames({
+                        [styles.done]: isDone
+                    })
+                }> {value}</div>
+                <ListItemSecondaryAction className={styles.delete}>
+                    <IconButton aria-label="Comments" onClick={() => onClickDelete(id)}>
+                        <DeleteForeverRoundedIcon/>
+                    </IconButton>
+                </ListItemSecondaryAction>
+            </ListItem>
+        )}
+}
+
 
 
 Item.propTypes = {
