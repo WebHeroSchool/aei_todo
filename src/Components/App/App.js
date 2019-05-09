@@ -14,10 +14,12 @@ class App extends React.Component {
                 },
                 {
                     value: 'Сделать уборку',
+                    isDone: true,
                     id: 2
                 },
                 {
                     value: 'Сделать уборку в репозитории',
+                    isDone: false,
                     id: 3
                 }],
         count: 3
@@ -63,7 +65,7 @@ class App extends React.Component {
                     <h1 className={styles.title}>Список дел:</h1>
                     <InputItem onClickAdd={this.onClickAdd}/>
                     <ItemList items={this.state.items} onClickDone={this.onClickDone} onClickDelete={ this.onClickDelete }/>
-                    <Footer taskCount={this.state.count} />
+                    <Footer count={this.state.count} />
                 </div>
             </div>);
     }
