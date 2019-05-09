@@ -14,18 +14,14 @@ class App extends React.Component {
                 },
                 {
                     value: 'Сделать уборку',
-                    isDone: false,
                     id: 2
                 },
                 {
                     value: 'Сделать уборку в репозитории',
-                    isDone: true,
                     id: 3
                 }],
         count: 3
         };
-
-
 
 
     onClickDone = id => {
@@ -38,7 +34,6 @@ class App extends React.Component {
         });
         this.setState({ items: newItemList});
     };
-
 
     onClickDelete = id => this.setState(state => ({
         items: state.items.filter(item =>

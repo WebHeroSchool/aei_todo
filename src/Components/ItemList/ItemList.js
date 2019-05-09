@@ -13,11 +13,10 @@ const ItemList = ({items, onClickDone, onClickDelete }) => (
                     isDone={item.isDone}
                     onClickDone={onClickDone}
                     onClickDelete={onClickDelete}
-                    id={item.id }
+                    id={item.id}
                 />
             ))}
         </List>
     );
-
 
 export default ItemList;
