@@ -1,13 +1,14 @@
 import React from "react";
 import Item from "../Item/Item"
 import List from '@material-ui/core/List';
+import styles from './ItemList.module.css'
 
 
-const ItemList = ({items, onClickDone,onClickDelete }) => (
-        <List>
+const ItemList = ({items, onClickDone, onClickDelete }) => (
+        <List className={ styles.itemList}>
             {items.map(item => (
                 <Item
-                    key={item.value}
+                    key={item.id}
                     value={item.value}
                     isDone={item.isDone}
                     onClickDone={onClickDone}
