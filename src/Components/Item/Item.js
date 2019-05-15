@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 
 class Item extends React.Component {
     componentDidMount () {
-        console.log(`${(new Date()).toUTCString()} выполняю Монтирование компонента "${this.props.value}"` );
+       this.timerId = setInterval(() => console.log(`${(new Date()).toUTCString()} выполняю Монтирование компонента "${this.props.value}"`), 900);
     }
 
     componentDidUpdate () {
@@ -19,6 +19,7 @@ class Item extends React.Component {
 
     componentWillUnmount() {
         console.log(`${(new Date()).toUTCString()} выполняю Удаление`)
+        clearInterval(this.timerId);
     }
 
     render () {
